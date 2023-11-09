@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Enchiridion | SDL3 TTF Setup</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: Georgia, serif}
+.w3-bar,h1,button {font-family: Georgia, serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-brown w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-dark-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="../index.html" class="w3-bar-item w3-button w3-padding-large w3-sand">Home</a>
+    <a href="directory.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-dark-grey">Directory</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-dark-grey">Contact [WIP]</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-dark-grey w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="directory.html" class="w3-bar-item w3-button w3-padding-large">Directory</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact [WIP]</a>
+  </div>
+</div>
+
+<!-- Header -->
+<!-- <header class="w3-container w3-black w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">The Enchiridion</h1>
+  <p class="w3-xlarge">Knowledge about game development and computer programming!</p>
+  <img src="images/Enchiridion.png" 
+        alt="An ancient book with codes of conduct, guidelines, and other helpful information for heroes." /></p>
+  <a href="webpages/directory.html"><button class="w3-button w3-brown w3-text-white w3-padding-large w3-large w3-margin-top">Enter</button></a>
+</header> -->
+
+
+<!-- First Grid -->
+<div class="w3-padding-64 w3-container">
+  <div class="w3-content">
+    <!-- <div class="w3-twothird"> -->
+    <h1 class="w3-text-brown">SDL3 TTF Visual Studio Setup! (Windows)</h1>
+    <img src="../images/Medieval-Adventure-Gear.png" 
+      alt="A traveler's knapsack accompanied by a small dagger, a bright shield, and a powerful torch." />
+    <p class="w3-text-white">We can use the <a href="https://github.com/libsdl-org/SDL_ttf" class="w3-text-blue-grey">SDL TTF</a> library to use TrueType fonts to render text in our program.</p>
+    
+    <h4 class="w3-text-white">Requirement List</h4>
+    <ol>
+      <li><a href="https://git-scm.com/downloads" class="w3-text-blue-grey">git</a> the commandline tool!</li>
+      <li><a href="https://visualstudio.microsoft.com/" class="w3-text-blue-grey">Visual Studio</a> and the Desktop Development with C++ workload. (This workload can be found in the Visual Studio Installer app <strong class="w3-text-sand">Modify > Desktop development with C++</strong>)</li>
+    </ol>
+
+    <!-- Cloning SDL3 section -->
+    <h3>Cloning SDL_ttf from Github</h3>
+    <p class="w3-text-white">Lets clone the <a href="https://github.com/libsdl-org/SDL_ttf" class="w3-text-blue-grey">SDL TTF Github Repository</a>. If you need a refresher please check the Cloning SDL3 from Github section of our <a href="sdl3-setup.html" class="w3-text-blue-grey">SDL3 setup guide</a>.</p>
+    
+    <!-- SDL3 external dependencies section -->
+    <h3>Updating SDL_ttf's External Dependencies</h3>
+    <p class="w3-text-white">In the <strong class="w3-text-sand">./SDL_ttf/external</strong> folder execute the <strong class="w3-dark-grey">SDL_ttf/external/Get-GitModules.ps1</strong> script, this downloads external dependencies.</p>
+
+    <!-- Building SDL_ttf section -->
+    <h3>Building SDL_ttf</h3>
+    <p class="w3-text-white">Open <strong class="w3-text-sand">SDL_ttf/VisualC/SDL_ttf.sln</strong> and make sure you target the Win32 (x86) architecture. Build both the <strong class="w3-text-sand">Release</strong> and <strong class="w3-text-sand">Debug</strong> binaries.</p>
+
+    <!-- Linking the SDL_ttf section -->
+    <h3>Linking SDL_ttf to our Visual Studio Project</h3>
+    <p class="w3-text-white">Open the project's property page, to do this right-click the project in the Solution Explorer and click the Properties tile. Make sure your configuration is set to "All Configurations". In the project's property page add SDL3_ttf.lib to <strong class="w3-text-sand">Linker > Input > Additional Dependencies</strong>.</p>
+
+    <img src="../images/SDL3-TTF-AdditonalDependencies.png" style="width: 100vw;height: auto;max-width: 970px;max-height: 100vh;object-fit: contain;"
+      alt="A very serious image containing an example of adding SDL3_ttf.lib to additional dependencies." />
+
+    <p class="w3-text-white">Check the image below to see how to setup the VC++ Directories. In the projects property page add the SDL ttf include to the <strong class="w3-text-sand">Configuration Properties > VC++ Directories > Include Directories</strong> my include is "<strong class="w3-text-sand">C:/Projects/SDL_ttf/include</strong>". After adding the include, change the configuration to target Release and add the SDL TTF <strong class="w3-text-sand">Release</strong> binaries 
+      (for me this is located in the <strong class="w3-text-sand">"C:/Projects/SDL_ttf/VisualC/Win32/Release"</strong> and <strong class="w3-text-sand">"C:/Projects/SDL_ttf/VisualC/Win32/Debug"</strong> folder).</p>
+
+    <img src="../images/SDL3-TTF-VC++Directories.png" style="width: 100vw;height: auto;max-width: 970px;max-height: 100vh;object-fit: contain;"
+      alt="A very serious example of my VC++ Directory page." />
+
+    <p class="w3-text-white"></p>The last step is to copy the SDL3_ttf.dll from the SDL_ttf Debug and Release output folder to our projects Debug and Release output folder. My SDL3_ttf.dll was in the <strong class="w3-text-sand">"C:/Projects/SDL_ttf/VisualC/Win32/Debug"</strong> and <strong class="w3-text-sand">"C:/Projects/SDL_ttf/VisualC/Win32/Release"</strong> folder. The copy example is shown below</p>
+    <img src="../images/SDL3-TTF-Binary-Copy.png" style="width: 100vw;height: auto;max-width: 970px;max-height: 100vh;object-fit: contain;"
+      alt="A very serious image showing SDL3_ttf.dll being copied into our projects output folder." />    
+
+    <!-- Testing SDL ttf section -->
+    <h3>Testing SDL_ttf</h3>
+      <p class="w3-text-white">The last step is to confirm that SDL ttf is setup and working correctly on your machine. Make sure you download a True Text Font file, we can find a large selection of fonts on <a href="https://fonts.google.com/" class="w3-text-blue-grey">Google Fonts</a> I downloaded the Roboto family. Make sure you set the font path to the your path</p>
+      <div class="w3-text-white w3-dark-grey">
+        <p>
+          #include &lt;iostream&gt;<br>
+          #include &lt;SDL3/SDL.h&gt;<br>
+          #include &lt;SDL3/SDL_main.h&gt; // only include this one in the source file with main()!<br>
+          #include &lt;SDL3_ttf/SDL_ttf.h&gt;<br>
+          <br>
+          int main(int argc, char* argv[])<br>
+          {<br>
+            &nbsp;const int WIDTH        = 252;<br>
+            &nbsp;const int HEIGHT       = 272;<br>
+            &nbsp;SDL_Window* window     = NULL;<br>
+            &nbsp;SDL_Renderer* renderer = NULL;<br>
+            <br>
+            &nbsp;SDL_Init(SDL_INIT_VIDEO);<br>
+            &nbsp;window = SDL_CreateWindow("Hello SDL", WIDTH, HEIGHT, 0);<br>
+            &nbsp;renderer = SDL_CreateRenderer(window, NULL, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);<br>
+            <br>
+            &nbsp;if (TTF_Init() != -1)<br>
+            &nbsp;{<br>
+              &nbsp;&nbsp;if (TTF_Font* font = TTF_OpenFont(<strong class="w3-white w3-text-black">"C:\\Users\\sanzo\\Downloads\\Roboto\\Roboto-Regular.ttf"</strong>, 12))<br>
+              &nbsp;&nbsp;{<br>
+                &nbsp;&nbsp;&nbsp;std::string text = "pineapple";<br>
+                <br>
+                &nbsp;&nbsp;&nbsp;if (SDL_Surface* surface = TTF_RenderText_Blended(font, text.c_str(), SDL_Color{0xff,0xff,0xff,0xff}))<br>
+                &nbsp;&nbsp;&nbsp;{<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;if (SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface))<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i &lt; 100; ++i)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDL_RenderClear(renderer);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDL_RenderTexture(renderer, texture, nullptr, nullptr);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDL_RenderPresent(renderer);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDL_DestroyTexture(texture);<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;&nbsp;SDL_DestroySurface(surface);<br>
+                      &nbsp;&nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;&nbsp;TTF_CloseFont(font);<br>
+                      &nbsp;&nbsp;}<br>
+                      &nbsp;&nbsp;TTF_Quit();<br>
+                      &nbsp;}<br>
+            <br>
+            &nbsp;SDL_DestroyRenderer(renderer);<br>
+            &nbsp;SDL_DestroyWindow(window);<br>
+            &nbsp;SDL_Quit();<br>
+            &nbsp;return 0;<br>
+          }<br>
+        </p>
+      </div>
+
+      <p class="w3-text-white">If a window pops up with the word pineapple, then closes everything worked great. I would test this program for both Release and Debug to make sure everything is good! This is what my program ended up looking like.</p>
+      <img src="../images/SDL3-TTF-Pineapple-Test.png" style="width: 100vw;height: auto;max-width: 970px;max-height: 100vh;object-fit: contain;"
+        alt="A very silly image of pineapple written in a window." />
+
+      <a href="sdl3-mixer-setup.html"><h5 class="w3-text-blue-grey">Setup SDL3 Mixer! (Windows)</h5></a>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge"></h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i> -->
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a> - Contact: sketburd@gmail.com</p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
