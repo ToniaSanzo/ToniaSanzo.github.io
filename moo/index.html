@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+	</head>
+
+
+	<body>
+
+		<div>
+
+			<!-- Banner at the top of the screen... mostly just buttons. -->
+			<div class="Banner">
+				<a href="../index.html"><button class="button"><img width="32px" height="32px" src="../assets/home.png" alt="home"></button></a>
+				<a href="./index.html"><button class="button">moo</button></a>
+			</div>
+
+
+			<div class="Content">
+
+				<!-- Navigation section on the left of the screen... mostly just links. -->
+				<div class="Column-Item Nav-Tree">
+					<ul id="Nav-UL">
+						<li>
+							<span class="Nav-Caret">moo</span>
+							<ul class="Nested">
+								<li><a href="./index.html">moo</a></li>
+								<li><a href="./format.html">moo::format</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Tools</span>
+							<ul class="Nested">
+								<li><a href="https://github.com/ToniaSanzo/Move-TODOBlocks">Move-TODOBlocks</a></li>
+								<li><a href="https://github.com/ToniaSanzo/WebP-Convertor">WebP-Convertor</a></li>
+								<li><a href="https://github.com/ToniaSanzo/FibonacciHeap">FibonacciHeap</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Games</span>
+							<ul class="Nested">
+								<li><a href="https://sketburd.itch.io/orbit-simulator">Orbit Simulator</a></li>
+								<li><a href="https://store.steampowered.com/app/1543760/Steep_Slopes/">Steep Slopes</a></li>
+								<li><a href="https://sketburd.itch.io/spooky-corporate">Spooky Corporate</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<script>
+						var toggler = document.getElementsByClassName("Nav-Caret");
+						var i;
+
+						for (i = 0; i < toggler.length; i++) {
+							toggler[i].addEventListener("click", function () {
+								this.parentElement.querySelector(".Nested").classList.toggle("Active");
+								this.classList.toggle("Nav-Caret-Down");
+							});
+						}
+					</script>
+
+				</div>
+
+
+				<!-- The main section takes up a majority of the web-page. -->
+				<div class="Column-Item Main-Section">
+
+					<div class="Title">
+						moo <a href="https://github.com/ar13l-x07/moo/blob/main/format/format.h"><img width="64px" height="64px" src="../assets/github-mark.png" alt="github-icon"></a>
+					</div>
+
+					<div class="Description">
+						Tiny tasty C/C++ tools... hopefully strange and delicious <3
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+	</body>
+	
+</html>
+

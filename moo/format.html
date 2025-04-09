@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+
+
+
+
+	<head>
+		<link rel="stylesheet" href="../styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+	</head>
+
+
+
+
+	<body>
+
+		<div>	
+		
+		
+		
+				
+			<div class="Banner">		
+				<a href="../index.html"><button class="button"><img width="32px" height="32px" src="../assets/home.png" alt="home"></button></a>
+				<a href="./index.html"><button class="button">moo</button></a>
+			</div>
+				
+				
+				
+				
+			<div class="Content">
+
+				<!-- Navigation section on the left of the screen... mostly just links. -->
+				<div class="Column-Item Nav-Tree">
+					<ul id="Nav-UL">
+						<li>
+							<span class="Nav-Caret">moo</span>
+							<ul class="Nested">
+								<li><a href="./index.html">moo</a></li>
+								<li><a href="./format.html">moo::format</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Tools</span>
+							<ul class="Nested">
+								<li><a href="https://github.com/ToniaSanzo/Move-TODOBlocks">Move-TODOBlocks</a></li>
+								<li><a href="https://github.com/ToniaSanzo/WebP-Convertor">WebP-Convertor</a></li>
+								<li><a href="https://github.com/ToniaSanzo/FibonacciHeap">FibonacciHeap</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Games</span>
+							<ul class="Nested">
+								<li><a href="https://sketburd.itch.io/orbit-simulator">Orbit Simulator</a></li>
+								<li><a href="https://store.steampowered.com/app/1543760/Steep_Slopes/">Steep Slopes</a></li>
+								<li><a href="https://sketburd.itch.io/spooky-corporate">Spooky Corporate</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<script>
+						var toggler = document.getElementsByClassName("Nav-Caret");
+						var i;
+
+						for (i = 0; i < toggler.length; i++) {
+							toggler[i].addEventListener("click", function () {
+								this.parentElement.querySelector(".Nested").classList.toggle("Active");
+								this.classList.toggle("Nav-Caret-Down");
+							});
+						}
+					</script>
+
+				</div>
+
+
+
+
+				<!-- The main section takes up a majority of the web-page. -->
+				<div class="Column-Item Main-Section">
+
+					<div class="Title">
+						moo::format <a href="https://github.com/ar13l-x07/moo/blob/main/format/format.h"><img width="64px" height="64px" src="../assets/github-mark.png" alt="github-icon"></a>
+					</div>
+
+					<div class="Description">
+
+						moo::format is a light "std::format / fmt" substitute.
+
+						<br><br>
+
+
+
+					</div>
+
+
+					<div class="Page-Content">
+						<h3>Description: </h3>
+						<p margin-bottom="50px">
+							moo::format is a light substitute to "std::format/fmt". It inserts arguments into a string model, example code can be found below.
+
+							<br><br>
+
+							<strong>Side Quest:</strong> If you are looking to make a little bit of coin the <a href="https://github.com/ar13l-x07/moo/blob/de88dac58ee52cc650295e2a3cf964fe567d2b89/format/format.h#L73">moo::formatParse</a> function could use an upgrade.
+						</p>
+					</div>
+
+
+
+
+					<div class="Page-Content">
+						<h4>Parameters: </h4>
+						<div style="text-align:center;">
+							moo::format(const char* <strong>formatString</strong>, Args... <strong>args</strong>);
+						</div>
+
+						​<table>
+							<tr>
+								<th>Name</th>
+								<th>Type</th>
+								<th>Description</th>
+							</tr>
+
+							<tr>
+								<td>formatString</td>
+								<td>const char*</td>
+								<td>The string "model/template" that the additional arguments are inserted into.</td>
+							</tr>
+
+							<tr>
+								<td>args</td>
+								<td>
+									std::string <br><br> const char* <br><br> char <br><br> int <br><br> long <br><br> long long <br><br> unsigned <br><br> unsigned long <br><br> unsigned long long <br><br> float <br><br> double <br><br> long double
+								</td>
+								<td>The values inserted into the the string "model/template".</td>
+							</tr>
+						</table>
+					</div>
+
+
+
+
+					<div class="Page-Content">
+						<h4>Example: </h4>
+						<div class="Code">
+							#include &lt;iostream&gt;
+							<mark style="background-color:#98e9d0;border-radius: 4px; font-weight:700;">#include "format.h"</mark>
+
+							int main()
+							{
+							std::cout << <mark style="background-color:#98e9d0;border-radius: 4px; font-weight:700;">moo::format("{} are ${}", "chocolate bars", 1.25);</mark>
+							return 0;
+							}
+
+							<mark style="font-weight:700;background-color: #98e9d0; border-radius: 4px;">// Output: chocolate bars are $1.25</mark>
+						</div>
+					</div>
+
+
+
+
+					<div class="Page-Content">
+						<h4>Setup Guide: </h4>
+						<ol style="margin-bottom:64px;">
+							<li>Download or copy the <a href="https://github.com/ar13l-x07/moo/blob/main/format/format.h">format.h</a> file.</li>
+							<li>Add the header file to your project.</li>
+							<li>Add your include directive... <mark style="background-color:#98e9d0;border-radius: 4px; font-weight:700;">#include "{filepath}/format.h"</mark>.</li>
+							<li>(Optional) Run the unit tests, found at the bottom of the format.h file.</li>
+							<li>Profit? <br> </li>
+						</ol>
+
+						<video class="Video" controls="controls" autoplay loop muted>
+							<source src="../assets/format-example.webm" type="video/webm" />
+						</video>
+					</div>
+
+				</div>
+
+			</div>
+						
+	</body>
+	
+</html>
+

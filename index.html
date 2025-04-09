@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+
+
+
+<html>
+
+	<!-- Import the stylesheet and the fonts we are using. -->
+	<head>
+		<link rel="stylesheet" href="./styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+	</head>
+
+
+
+
+	<body>
+
+		<div>
+
+			<!-- Banner at the top of the screen... mostly just buttons. -->
+			<div class="Banner">
+				<a href="./index.html"><button class="button"><img width="32px" height="32px" src="./assets/home.png" alt="home"></button></a>
+				<a href="./moo/index.html"><button class="button">moo</button></a>
+			</div>
+
+
+
+			<div class="Content">
+
+
+				<!-- Navigation section on the left of the screen... mostly just links. -->
+				<div class="Column-Item Nav-Tree">
+					<ul id="Nav-UL">
+						<li>
+							<span class="Nav-Caret">moo</span>
+							<ul class="Nested">
+								<li><a href="./moo/index.html">moo</a></li>
+								<li><a href="./moo/format.html">moo::format</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Tools</span>
+							<ul class="Nested">
+								<li><a href="https://github.com/ToniaSanzo/Move-TODOBlocks">Move-TODOBlocks</a></li>
+								<li><a href="https://github.com/ToniaSanzo/WebP-Convertor">WebP-Convertor</a></li>
+								<li><a href="https://github.com/ToniaSanzo/FibonacciHeap">FibonacciHeap</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<span class="Nav-Caret">Games</span>
+							<ul class="Nested">
+								<li><a href="https://sketburd.itch.io/orbit-simulator">Orbit Simulator</a></li>
+								<li><a href="https://store.steampowered.com/app/1543760/Steep_Slopes/">Steep Slopes</a></li>
+								<li><a href="https://sketburd.itch.io/spooky-corporate">Spooky Corporate</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<script>
+						var toggler = document.getElementsByClassName("Nav-Caret");
+						var i;
+
+						for (i = 0; i < toggler.length; i++) {
+							toggler[i].addEventListener("click", function () {
+								this.parentElement.querySelector(".Nested").classList.toggle("Active");
+								this.classList.toggle("Nav-Caret-Down");
+							});
+						}
+					</script>
+
+				</div>
+
+
+				<!-- The main section takes up a majority of the web-page. -->
+				<div class="Column-Item Main-Section">
+
+
+					<div class="Title">
+						SKETburd (tsanzo)<a href="https://github.com/ar13l-x07"><img width="64px" height="64px" src="./assets/github-mark.png" alt="github-icon"></a>
+					</div>
+
+
+					<div class="Description">
+						Sandwich Artist
+					</div>
+
+						<video class="Video" controls="controls" autoplay muted>
+							<source src="./assets/HelloDonuts.mp4" type="video/mp4" />
+						</video>
+
+
+					<!-- moo section of the main page... -->
+					<div class="Page-Content">
+						<h2>moo</h2>
+						<p>
+							moo is a collection of easy to integrate C++ tools and treats. Elements of moo are contained within a single .h header file and the
+							only depend on the C++ STL.
+
+							<ul style="list-style-type: none;">
+								<li><a href="./moo/format.html">moo::format</a></li>
+							</ul>
+						</p>
+					</div>
+
+
+
+
+					<!-- Tool section of the main page... -->
+					<div class="Page-Content">
+						<h2>Tools</h2>
+
+						<!-- Move-TODOBlocks sub-section -->
+						<a class="Header-Link" href="https://github.com/ToniaSanzo/Move-TODOBlocks"><h4>Move-TODOBlocks <img src="./assets/link.png" alt="Link Icon" width="15px"></h4></a>
+						<p>
+							PowerShell script that moves TODO comments from source code to a TODO.shelf (and vice-versa). Available on Windows.
+						</p>
+
+
+						<!-- Webp-Convertor sub-section -->
+						<a class="Header-Link" href="https://github.com/ToniaSanzo/WebP-Convertor"><h4>Webp-Convertor <img src="./assets/link.png" alt="Link Icon" width="15px"></h4></a>
+						<p>
+							WebP conversion script, converts .webp images to .png images. Available on Windows.
+						</p>
+
+
+						<!-- FibonacciHeap sub-section -->
+						<a class="Header-Link" href="https://github.com/ToniaSanzo/FibonacciHeap"><h4>FibonacciHeap <img src="./assets/link.png" alt="Link Icon" width="15px"></h4></a>
+						<p>
+							A C++ single header Fibonacci Heap, this is an optimized priority queue, very useful for path-finding algorithms.
+						</p>
+
+
+					</div>
+
+
+
+
+					<!-- Game section of the main page... -->
+					<div class="Page-Content">
+
+						<h2>Games</h2>
+
+						<div class="scroll-container">
+							<a class="Header-Link" href="https://sketburd.itch.io/orbit-simulator"><img src="./assets/Orbit-Simulator-thumbnail.png" alt="Orbit Simulator" width="300px"></a>
+							<a class="Header-Link" href="https://store.steampowered.com/app/1543760/Steep_Slopes/"><img src="./assets/Steep-Slopes-thumbnail.png" alt="Steep Slopes" width="300px"></a>
+							<a class="Header-Link" href="https://sketburd.itch.io/spooky-corporate"><img src="./assets/Corporate-Nightmare-thumbnail.png" alt="Corporate Nightmare" width="300px"></a>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+		
+	</body>
+	
+</html>

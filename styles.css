@@ -1,0 +1,308 @@
+
+/* Banner - displayed at the top of the webpage. */
+.Banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #000b3b;
+	width: 100%;
+	height: 78px;
+	color: #323232;
+}
+
+
+
+
+/* Content - the webpage's body. */
+.Content {
+	position: absolute;
+	top: 110px;
+	height: 85%;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	color: #323232;
+  	font-weight: 500;
+  	font-style: normal;
+}
+
+
+
+
+/* Nav-Tree - links and stuff on the left-side of the web-page. */
+.Nav-Tree {
+	font-size: 1.2em;
+	float: left;
+	width: 200px;
+	height: 100%;
+	overflow: auto;
+	padding: 5px;
+	margin-right: 10px;
+	border-radius: 16px;
+	border: 3px solid #efefef;
+}
+
+	/* Remove margins and padding from the parent ul */
+	#Nav-UL {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		/* Style the caret/arrow */
+		.Nav-Caret {
+			cursor: pointer;
+			user-select: none; /* Prevent text selection */
+		}
+
+		/* Create the caret/arrow with a unicode, and style it */
+		.Nav-Caret::before {
+			content: "\25B6";
+			color: #323232;
+			display: inline-block;
+			margin-right: 6px;
+		}
+
+		/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+		.Nav-Caret-Down::before {
+			transform: rotate(90deg);
+		}
+
+	/* Hide the nested list */
+	.Nested {
+		list-style-type: none;
+		font-size: .8em;
+		display: none;
+	}
+
+	/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+	.Active {
+		display: block;
+	}
+
+
+
+
+/* Main-Section - the meat and potatoes of the webpage... this is the main part. */
+.Main-Section {
+	text-align: center;
+	float: none;
+	margin-right: 20px;
+	overflow: auto;
+	height: 100%;
+	padding: 10px;
+	border: 3px solid #efefef;
+	border-radius: 16px;
+}
+
+
+
+
+.Title {
+	text-align: center;
+	border: 3px black;
+	font-family: "Poppins", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 100;
+	font-style: normal;
+	font-size: 72px;
+	margin-bottom: 12px;
+}
+
+
+
+
+.Description {
+	text-align: center;
+	overflow: auto;
+	border: 5px;
+	padding: 10px;
+	margin-bottom: 69px;
+}
+
+
+
+
+.Page-Content {
+	text-align: left;
+	border: 5px;
+	padding: 10px;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 64px;
+}
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* Video // Video // Video // Video // Video // V*/
+.Video {
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:64px;
+	border-radius: 16px;
+	width: 100%;
+	max-width: 1080px;
+}
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* Code // Code // Code // Code // Code // Code /*/
+.Code {
+	white-space: pre-wrap;
+	background-color: #efefef;
+	border: none;
+	color: black;
+	padding: 13px;
+	text-align: left;
+	text-decoration: none;
+	display: inline-block;
+	margin: 2px;
+	border-radius: 16px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	width: 100%;
+	max-width: 1080px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:64px;
+}
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* Button // Button // Button // Button // Button*/
+.button {
+	background-color: #FFFFFF;
+	border: none;
+	color: black;
+	padding: 0px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 5px 0px 0px 3px;
+	cursor: pointer;
+	border-radius: 16px;
+	font-size: 2em;
+	font-family: "Playwrite AR", cursive;
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+
+
+.button:hover {
+	background-color: #FFFFFF;
+	border: none;
+	color: black;
+	padding: 0px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 5px 0px 0px 3px;
+	cursor: pointer;
+	border-radius: 16px;
+	font-size: 2em;
+	color: black;
+	font-style: bold;
+}
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+
+
+
+
+
+/* Table // Table // Table // Table // Table // T*/
+table {
+	width:84%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+
+
+th {
+	background-color:#000b3b; 
+	padding: 12px; 
+	border-radius:4px;
+}
+
+
+
+
+td {
+	background-color:#efefef; 
+	padding: 12px; 
+	border-radius:4px;
+}
+/* // // // // // // // // // // // // // // // /*/
+
+
+
+.Header-Link:link {
+	text-decoration: none;
+	color: #323232
+}
+
+.Header-Link:visited {
+	text-decoration: none;
+	color: #696969
+}
+
+.Header-Link:hover {
+	text-decoration: underline;
+}
+
+.Header-Link:active {
+	text-decoration: underline;
+}
+
+
+div.scroll-container {
+	overflow: auto;
+	white-space: nowrap;
+	padding: 10px;
+}
+
+div.scroll-container img {
+	padding: 10px;
+}
