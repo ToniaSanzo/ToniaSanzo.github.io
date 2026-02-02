@@ -1,5 +1,4 @@
-
-/* Banner - displayed at the top of the webpage. */
+/* Banner displayed across the top. */
 .Banner {
 	position: absolute;
 	top: 0;
@@ -13,7 +12,7 @@
 
 
 
-/* Content - the webpage's body. */
+/* The webpage's main body. */
 .Content {
 	position: absolute;
 	top: 110px;
@@ -28,7 +27,7 @@
 
 
 
-/* Nav-Tree - links and stuff on the left-side of the web-page. */
+/* Links on the left-side of the web-page. */
 .Nav-Tree {
 	font-size: 1.2em;
 	float: left;
@@ -41,48 +40,66 @@
 	border: 3px solid #efefef;
 }
 
-	/* Remove margins and padding from the parent ul */
-	#Nav-UL {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
 
-		/* Style the caret/arrow */
-		.Nav-Caret {
-			cursor: pointer;
-			user-select: none; /* Prevent text selection */
-		}
 
-		/* Create the caret/arrow with a unicode, and style it */
-		.Nav-Caret::before {
-			content: "\25B6";
-			color: #323232;
-			display: inline-block;
-			margin-right: 6px;
-		}
 
-		/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-		.Nav-Caret-Down::before {
-			transform: rotate(90deg);
-		}
-
-	/* Hide the nested list */
-	.Nested {
-		list-style-type: none;
-		font-size: .8em;
-		display: none;
-	}
-
-	/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
-	.Active {
-		display: block;
-	}
+/* Remove margins and padding from the parent ul */
+#Nav-UL {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 
 
 
 
-/* Main-Section - the meat and potatoes of the webpage... this is the main part. */
+/* The Nav-Tree caret/arrow */
+.Nav-Caret {
+	cursor: pointer;
+	user-select: none; /* Prevent text selection */
+}
+
+
+
+
+/* Setup the Nav-Caret */
+.Nav-Caret::before {
+	content: "\25B6";
+	color: #323232;
+	display: inline-block;
+	margin-right: 6px;
+}
+
+
+
+
+/* Rotate the Nav-Caret when clicked */
+.Nav-Caret-Down::before {
+	transform: rotate(90deg);
+}
+
+
+
+
+/* Hide the nested list */
+.Nested {
+	list-style-type: none;
+	font-size: .8em;
+	display: none;
+}
+
+
+
+
+/* Displays the nested list when the Nav-Caret is selected */
+.Active {
+	display: block;
+}
+
+
+
+
+/* The meat and potatoes of the webpage... */
 .Main-Section {
 	text-align: center;
 	float: none;
@@ -130,34 +147,10 @@
 	margin-right: 15%;
 	margin-bottom: 64px;
 }
-/* // // // // // // // // // // // // // // // /*/
 
 
 
 
-
-
-
-
-/* // // // // // // // // // // // // // // // /*/
-
-
-
-
-
-
-
-
-/* // // // // // // // // // // // // // // // /*/
-
-
-
-
-
-
-
-
-/* Video // Video // Video // Video // Video // V*/
 .Video {
 	margin-left:auto;
 	margin-right:auto;
@@ -166,16 +159,10 @@
 	width: 100%;
 	max-width: 1080px;
 }
-/* // // // // // // // // // // // // // // // /*/
 
 
 
 
-
-
-
-
-/* Code // Code // Code // Code // Code // Code /*/
 .Code {
 	white-space: pre-wrap;
 	background-color: #efefef;
@@ -187,7 +174,7 @@
 	display: inline-block;
 	margin: 2px;
 	border-radius: 16px;
-	font-family: "Poppins", sans-serif;
+	font-family: "Monaco", Monospace;
 	font-weight: 500;
 	font-style: normal;
 	width: 100%;
@@ -196,16 +183,50 @@
 	margin-right:auto;
 	margin-bottom:64px;
 }
-/* // // // // // // // // // // // // // // // /*/
 
 
 
 
+.Code-Comment {
+	background-color: #efefef;
+	color: #949494;
+}
 
 
 
 
-/* Button // Button // Button // Button // Button*/
+.Code-Name {
+	background-color: #efefef;
+	color: #e58fae;
+}
+
+
+
+
+.Code-Keyword {
+	background-color: #efefef;
+	color: #66bcf8;
+}
+
+
+
+
+.Code-Call {
+	background-color: #efefef;
+	color: #47156e;
+}
+
+
+
+
+.Code-Library {
+	background-color: #efefef;
+	color: #6d5dd6;
+}
+
+
+
+
 .button {
 	background-color: #FFFFFF;
 	border: none;
@@ -241,18 +262,13 @@
 	color: black;
 	font-style: bold;
 }
-/* // // // // // // // // // // // // // // // /*/
 
 
 
 
-
-
-
-
-/* Table // Table // Table // Table // Table // T*/
+/* Table */
 table {
-	width:84%;
+	width:100%;
 	margin-left:auto;
 	margin-right:auto;
 }
@@ -275,7 +291,7 @@ td {
 	padding: 12px; 
 	border-radius:4px;
 }
-/* // // // // // // // // // // // // // // // /*/
+
 
 
 
@@ -284,18 +300,29 @@ td {
 	color: #323232
 }
 
+
+
+
 .Header-Link:visited {
 	text-decoration: none;
 	color: #696969
 }
 
+
+
+
 .Header-Link:hover {
 	text-decoration: underline;
 }
 
+
+
+
 .Header-Link:active {
 	text-decoration: underline;
 }
+
+
 
 
 div.scroll-container {
@@ -304,6 +331,10 @@ div.scroll-container {
 	padding: 10px;
 }
 
+
+
+
 div.scroll-container img {
 	padding: 10px;
 }
+
