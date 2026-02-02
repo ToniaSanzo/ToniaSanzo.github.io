@@ -150,95 +150,95 @@
 					<div class="Page-Content">
 						<h4>Source Code: </h4>
 						<div class="Code">
-<mark class="Code-Comment">// format.h: light "std::format / fmt" substitute.</mark>
-#<mark class="Code-Keyword">pragma</mark> once
-#<mark class="Code-Keyword">include</mark> <mark class="Code-Library">&lt;string&gt;</mark>
+<div class="Code-Comment">// format.h: light "std::format / fmt" substitute.</mark>
+#<div class="Code-Keyword">pragma</mark> once
+#<div class="Code-Keyword">include</mark> <div class="Code-Library">&lt;string&gt;</mark>
 
 
 
 
-<mark class="Code-Comment">// moo::format is a function to simplify string formating.</mark>
-<mark class="Code-Comment">//</mark>
-<mark class="Code-Comment">// Args:</mark>
-<mark class="Code-Comment">// - formatString (const char*) : The string model, contains "{}" to show where to insert</mark>
-<mark class="Code-Comment">//                                arguments. </mark>
-<mark class="Code-Comment">// - args (Args...)             : The arguments to insert into formatString. They replace the "{}" </mark>
-<mark class="Code-Comment">//                                in the string model.</mark>
-<mark class="Code-Comment">// </mark>
-<mark class="Code-Comment">//                                Valid arguments include:</mark>
-<mark class="Code-Comment">// </mark>
-<mark class="Code-Comment">//                                    std::string</mark>
-<mark class="Code-Comment">//                                    const char*</mark>
-<mark class="Code-Comment">//                                    int	</mark>
-<mark class="Code-Comment">//                                    long</mark>
-<mark class="Code-Comment">//                                    long long</mark>
-<mark class="Code-Comment">//                                    unsigned</mark>
-<mark class="Code-Comment">//                                    unsigned long</mark>
-<mark class="Code-Comment">//                                    unsigned long long </mark>
-<mark class="Code-Comment">//                                    float</mark>
-<mark class="Code-Comment">//                                    double</mark>
-<mark class="Code-Comment">//                                    long double</mark>
-<mark class="Code-Comment">// </mark>
-<mark class="Code-Comment">// </mark>
-<mark class="Code-Comment">// Returns:</mark>
-<mark class="Code-Comment">// - std::string: The string model with the inserted arguments.</mark>
-<mark class="Code-Comment">//</mark>
-<mark class="Code-Comment">// Examples:</mark>
-<mark class="Code-Comment">// </mark>
-<mark class="Code-Comment">//     moo::format("{} bars for sale! ${}", "Chocolate", 1);</mark>
-<mark class="Code-Comment">//     - returns: "Chocolate bars for sale! $1"</mark>
-<mark class="Code-Comment">//</mark>
-<mark class="Code-Comment">// Online Help:</mark>
-<mark class="Code-Comment">//</mark>
-<mark class="Code-Comment">// 	https://toniasanzo.github.io/moo/format.html</mark>
-<mark class="Code-Comment">//</mark>
+<div class="Code-Comment">// moo::format is a function to simplify string formating.</mark>
+<div class="Code-Comment">//</mark>
+<div class="Code-Comment">// Args:</mark>
+<div class="Code-Comment">// - formatString (const char*) : The string model, contains "{}" to show where to insert</mark>
+<div class="Code-Comment">//                                arguments. </mark>
+<div class="Code-Comment">// - args (Args...)             : The arguments to insert into formatString. They replace the "{}" </mark>
+<div class="Code-Comment">//                                in the string model.</mark>
+<div class="Code-Comment">// </mark>
+<div class="Code-Comment">//                                Valid arguments include:</mark>
+<div class="Code-Comment">// </mark>
+<div class="Code-Comment">//                                    std::string</mark>
+<div class="Code-Comment">//                                    const char*</mark>
+<div class="Code-Comment">//                                    int	</mark>
+<div class="Code-Comment">//                                    long</mark>
+<div class="Code-Comment">//                                    long long</mark>
+<div class="Code-Comment">//                                    unsigned</mark>
+<div class="Code-Comment">//                                    unsigned long</mark>
+<div class="Code-Comment">//                                    unsigned long long </mark>
+<div class="Code-Comment">//                                    float</mark>
+<div class="Code-Comment">//                                    double</mark>
+<div class="Code-Comment">//                                    long double</mark>
+<div class="Code-Comment">// </mark>
+<div class="Code-Comment">// </mark>
+<div class="Code-Comment">// Returns:</mark>
+<div class="Code-Comment">// - std::string: The string model with the inserted arguments.</mark>
+<div class="Code-Comment">//</mark>
+<div class="Code-Comment">// Examples:</mark>
+<div class="Code-Comment">// </mark>
+<div class="Code-Comment">//     moo::format("{} bars for sale! ${}", "Chocolate", 1);</mark>
+<div class="Code-Comment">//     - returns: "Chocolate bars for sale! $1"</mark>
+<div class="Code-Comment">//</mark>
+<div class="Code-Comment">// Online Help:</mark>
+<div class="Code-Comment">//</mark>
+<div class="Code-Comment">// 	https://toniasanzo.github.io/moo/format.html</mark>
+<div class="Code-Comment">//</mark>
 
 
-<mark class="Code-Keyword">namespace</mark> <mark class="Code-Name">moo</mark>
+<div class="Code-Keyword">namespace</mark> <div class="Code-Name">moo</mark>
 {
 
 
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(std::string arg)        { <mark class="Code-Keyword">return</mark> arg;                 }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">const char</mark>* arg)        { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::string</mark>(arg);    }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">char</mark> arg)               { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::string</mark>(1, arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">int</mark> arg)                { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">long</mark> arg)               { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">long long</mark> arg)          { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">unsigned int</mark> arg)       { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">unsigned long</mark> arg)      { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">unsigned long long</mark> arg) { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">float</mark> arg)              { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">double</mark> arg)             { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">to_string</mark>(<mark class="Code-Keyword">long double</mark> arg)        { <mark class="Code-Keyword">return</mark> <mark class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(std::string arg)        { <div class="Code-Keyword">return</mark> arg;                 }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">const char</mark>* arg)        { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::string</mark>(arg);    }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">char</mark> arg)               { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::string</mark>(1, arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">int</mark> arg)                { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">long</mark> arg)               { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">long long</mark> arg)          { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">unsigned int</mark> arg)       { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">unsigned long</mark> arg)      { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">unsigned long long</mark> arg) { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">float</mark> arg)              { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">double</mark> arg)             { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">to_string</mark>(<div class="Code-Keyword">long double</mark> arg)        { <div class="Code-Keyword">return</mark> <div class="Code-Call">std::to_string</mark>(arg); }
 
 
 
 
-&Tab;<mark class="Code-Comment">// Based on a picture of the Boyer–Moore string-search algorithm.</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Comment">//                            P A N A M A -</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Comment">//                            N A M - - - -</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Comment">//                            - N A M - - -</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Comment">//                            - - N A M - -</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Comment">//                            - - - N A M -</mark>
-&Tab;<mark class="Code-Comment">//</mark>
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">formatParse</mark>(<mark class="Code-Keyword">const char</mark>* formatString, std::string value)
+&Tab;<div class="Code-Comment">// Based on a picture of the Boyer–Moore string-search algorithm.</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Comment">//                            P A N A M A -</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Comment">//                            N A M - - - -</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Comment">//                            - N A M - - -</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Comment">//                            - - N A M - -</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Comment">//                            - - - N A M -</mark>
+&Tab;<div class="Code-Comment">//</mark>
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">formatParse</mark>(<div class="Code-Keyword">const char</mark>* formatString, std::string value)
 &Tab;{
-&Tab;&Tab;std::string retStr(<mark class="Code-Library">""</mark>);
-&Tab;&Tab;<mark class="Code-Keyword">for</mark> (<mark class="Code-Keyword">int</mark> index = <mark class="Code-Library">0</mark>; formatString[index + <mark class="Code-Library">1</mark>] != <mark class="Code-Library">'\0'</mark> ; ++index)
+&Tab;&Tab;std::string retStr(<div class="Code-Library">""</mark>);
+&Tab;&Tab;<div class="Code-Keyword">for</mark> (<div class="Code-Keyword">int</mark> index = <div class="Code-Library">0</mark>; formatString[index + <div class="Code-Library">1</mark>] != <div class="Code-Library">'\0'</mark> ; ++index)
 &Tab;&Tab;{
-&Tab;&Tab;&Tab;<mark class="Code-Keyword">if</mark> (formatString[index] == <mark class="Code-Library">'{'</mark> && formatString[index + <mark class="Code-Library">1</mark>] == <mark class="Code-Library"></mark>'}'</mark>)
+&Tab;&Tab;&Tab;<div class="Code-Keyword">if</mark> (formatString[index] == <div class="Code-Library">'{'</mark> && formatString[index + <div class="Code-Library">1</mark>] == <div class="Code-Library"></mark>'}'</mark>)
 &Tab;&Tab;&Tab;{
 &Tab;&Tab;&Tab;&Tab;retStr += value;
-&Tab;&Tab;&Tab;&Tab;<mark class="Code-Keyword">if</mark> (formatString[index + <mark class="Code-Library">2</mark>] != <mark class="Code-Library">'\0'</mark>)
+&Tab;&Tab;&Tab;&Tab;<div class="Code-Keyword">if</mark> (formatString[index + <div class="Code-Library">2</mark>] != <div class="Code-Library">'\0'</mark>)
 &Tab;&Tab;&Tab;&Tab;{		
-&Tab;&Tab;&Tab;&Tab;&Tab;retStr += &(formatString[index + <mark class="Code-Library">2</mark>]);
+&Tab;&Tab;&Tab;&Tab;&Tab;retStr += &(formatString[index + <div class="Code-Library">2</mark>]);
 &Tab;&Tab;&Tab;&Tab;}
-&Tab;&Tab;&Tab;&Tab;<mark class="Code-Keyword">return</mark> retStr;
+&Tab;&Tab;&Tab;&Tab;<div class="Code-Keyword">return</mark> retStr;
 &Tab;&Tab;&Tab;}
 &Tab;&Tab;&Tab;retStr += formatString[index];
 &Tab;&Tab;}
@@ -248,15 +248,15 @@
 
 
 
-&Tab;<mark class="Code-Keyword">template</mark>&lt;<mark class="Code-Keyword">typename</mark> T&gt;	
-&Tab;<mark class="Code-Keyword">inline</mark> std::string <mark class="Code-Name">format</mark>(<mark class="Code-Keyword">const char</mark>* formatString, T t)
+&Tab;<div class="Code-Keyword">template</mark>&lt;<div class="Code-Keyword">typename</mark> T&gt;	
+&Tab;<div class="Code-Keyword">inline</mark> std::string <div class="Code-Name">format</mark>(<div class="Code-Keyword">const char</mark>* formatString, T t)
 &Tab;{
-&Tab;&Tab;<mark class="Code-Keyword">return</mark> <mark class="Code-Name">formatParse</mark>(formatString, <mark class="Code-Name">to_string</mark>(t));
+&Tab;&Tab;<div class="Code-Keyword">return</mark> <div class="Code-Name">formatParse</mark>(formatString, <div class="Code-Name">to_string</mark>(t));
 &Tab;}
-&Tab;<mark class="Code-Keyword">template</mark>&lt;<mark class="Code-Keyword">typename</mark> T, <mark class="Code-Keyword">typename</mark>... Args&gt;
-&Tab;<mark class="Code-Keyword"></mark>inline</mark> std::string <mark class="Code-Name">format</mark>(<mark class="Code-Keyword">const char</mark>* formatString, T t, Args... args)
+&Tab;<div class="Code-Keyword">template</mark>&lt;<div class="Code-Keyword">typename</mark> T, <div class="Code-Keyword">typename</mark>... Args&gt;
+&Tab;<div class="Code-Keyword"></mark>inline</mark> std::string <div class="Code-Name">format</mark>(<div class="Code-Keyword">const char</mark>* formatString, T t, Args... args)
 &Tab;{
-&Tab;&Tab;<mark class="Code-Keyword">return</mark> <mark class="Code-Name">format</mark>(<mark class="Code-Name">formatParse</mark>(formatString, <mark class="Code-Name">to_string</mark>(t)).<mark class="Code-Name">c_str</mark>(), args...);
+&Tab;&Tab;<div class="Code-Keyword">return</mark> <div class="Code-Name">format</mark>(<div class="Code-Name">formatParse</mark>(formatString, <div class="Code-Name">to_string</mark>(t)).<div class="Code-Name">c_str</mark>(), args...);
 &Tab;}
 
 
@@ -264,39 +264,39 @@
 
 
 
-<mark class="Code-Comment">/* Unit Tests:</mark>
+<div class="Code-Comment">/* Unit Tests:</mark>
 
-<mark class="Code-Comment">std::string a = "a";</mark>
-<mark class="Code-Comment">const char* b = "b";</mark>
-<mark class="Code-Comment">int c = 0;</mark>
-<mark class="Code-Comment">long d = 1;</mark>
-<mark class="Code-Comment">long long e = 2;</mark>
-<mark class="Code-Comment">unsigned f = 3;</mark>
-<mark class="Code-Comment">unsigned long g = 4;</mark>
-<mark class="Code-Comment">unsigned long long h = 5;</mark>
-<mark class="Code-Comment">float i = 6;</mark>
-<mark class="Code-Comment">double j = 7;</mark>
-<mark class="Code-Comment">long double k = 8;</mark>
-<mark class="Code-Comment">char m = '9';</mark>
+<div class="Code-Comment">std::string a = "a";</mark>
+<div class="Code-Comment">const char* b = "b";</mark>
+<div class="Code-Comment">int c = 0;</mark>
+<div class="Code-Comment">long d = 1;</mark>
+<div class="Code-Comment">long long e = 2;</mark>
+<div class="Code-Comment">unsigned f = 3;</mark>
+<div class="Code-Comment">unsigned long g = 4;</mark>
+<div class="Code-Comment">unsigned long long h = 5;</mark>
+<div class="Code-Comment">float i = 6;</mark>
+<div class="Code-Comment">double j = 7;</mark>
+<div class="Code-Comment">long double k = 8;</mark>
+<div class="Code-Comment">char m = '9';</mark>
 
-<mark class="Code-Comment">std::cout << moo::format("a:{}\nb:{}\n0:{}\n1:{}\n2:{}\n3:{}\n4:{}\n5:{}\n6.000000:{}\n7.000000:{}\n8.000000:{}\n9:{}\n", a, b, c, d, e, f, g, h, i, j, k, m);</mark>
+<div class="Code-Comment">std::cout << moo::format("a:{}\nb:{}\n0:{}\n1:{}\n2:{}\n3:{}\n4:{}\n5:{}\n6.000000:{}\n7.000000:{}\n8.000000:{}\n9:{}\n", a, b, c, d, e, f, g, h, i, j, k, m);</mark>
 
 
-<mark class="Code-Comment">// Expected Output:</mark>
-<mark class="Code-Comment">// a:a</mark>
-<mark class="Code-Comment">// b:b</mark>
-<mark class="Code-Comment">// 0:0</mark>
-<mark class="Code-Comment">// 1:1</mark>
-<mark class="Code-Comment">// 2:2</mark>
-<mark class="Code-Comment">// 3:3</mark>
-<mark class="Code-Comment">// 4:4</mark>
-<mark class="Code-Comment">// 5:5</mark>
-<mark class="Code-Comment">// 6.000000:6.000000</mark>
-<mark class="Code-Comment">// 7.000000:7.000000</mark>
-<mark class="Code-Comment">// 8.000000:8.000000</mark>
-<mark class="Code-Comment">// 9:9</mark>
+<div class="Code-Comment">// Expected Output:</mark>
+<div class="Code-Comment">// a:a</mark>
+<div class="Code-Comment">// b:b</mark>
+<div class="Code-Comment">// 0:0</mark>
+<div class="Code-Comment">// 1:1</mark>
+<div class="Code-Comment">// 2:2</mark>
+<div class="Code-Comment">// 3:3</mark>
+<div class="Code-Comment">// 4:4</mark>
+<div class="Code-Comment">// 5:5</mark>
+<div class="Code-Comment">// 6.000000:6.000000</mark>
+<div class="Code-Comment">// 7.000000:7.000000</mark>
+<div class="Code-Comment">// 8.000000:8.000000</mark>
+<div class="Code-Comment">// 9:9</mark>
 
-<mark class="Code-Comment">*/</mark>
+<div class="Code-Comment">*/</mark>
 
 						</div>
 					</div>
@@ -307,16 +307,16 @@
 					<div class="Page-Content">
 						<h4>Example: </h4>
 						<div class="Code">
-#<mark class="Code-Keyword">include</mark> <mark class="Code-Library">&lt;iostream&gt;</mark>
-#<mark class="Code-Keyword">include</mark> "format.h"
+#<div class="Code-Keyword">include</mark> <div class="Code-Library">&lt;iostream&gt;</mark>
+#<div class="Code-Keyword">include</mark> "format.h"
 
-<mark class="Code-Keyword">int</mark> <mark class="Code-Name">main</mark>()
+<div class="Code-Keyword">int</mark> <div class="Code-Name">main</mark>()
 {
-&Tab;<mark class="Code-Call">std::cout</mark> &lt;&lt; <mark class="Code-Name">moo::format</mark>(<mark class="Code-Library">"{} are ${}"</mark>, <mark class="Code-Library">"chocolate bars"</mark>, 1.25);</mark>
-&Tab;<mark class="Code-Keyword">return</mark> <mark class="Code-Library">0</mark>;
+&Tab;<div class="Code-Call">std::cout</mark> &lt;&lt; <div class="Code-Name">moo::format</mark>(<div class="Code-Library">"{} are ${}"</mark>, <div class="Code-Library">"chocolate bars"</mark>, 1.25);</mark>
+&Tab;<div class="Code-Keyword">return</mark> <div class="Code-Library">0</mark>;
 }
 
-<mark class="Code-Comment">// Output: chocolate bars are $1.25</mark>
+<div class="Code-Comment">// Output: chocolate bars are $1.25</mark>
 						</div>
 					</div>
 
