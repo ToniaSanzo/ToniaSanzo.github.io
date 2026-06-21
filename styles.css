@@ -5,7 +5,7 @@
 	left: 0;
 	background-color: #000b3b;
 	width: 100%;
-	height: 78px;
+	height: 41px;
 	color: #323232;
 }
 
@@ -151,18 +151,6 @@
 
 
 
-.Video {
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:64px;
-	border-radius: 16px;
-	width: 100%;
-	max-width: 1080px;
-}
-
-
-
-
 .Code {
 	white-space: pre-wrap;
 	background-color: #efefef;
@@ -228,47 +216,12 @@
 
 
 
-.button {
-	background-color: #FFFFFF;
-	border: none;
-	color: black;
-	padding: 0px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	margin: 5px 0px 0px 3px;
-	cursor: pointer;
-	border-radius: 16px;
-	font-size: 2em;
-	font-family: "Playwrite AR", cursive;
-	font-weight: 500;
-	font-style: normal;
-}
-
-
-
-
-.button:hover {
-	background-color: #FFFFFF;
-	border: none;
-	color: black;
-	padding: 0px 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	margin: 5px 0px 0px 3px;
-	cursor: pointer;
-	border-radius: 16px;
-	font-size: 2em;
-	color: black;
-	font-style: bold;
-}
-
-
-
-
 /* Table */
 table {
+	font-family: "Monaco", Monospace;
+	font-size: 12px;
+	font-weight: 500;
+	font-style: normal;
 	width:100%;
 	margin-left:auto;
 	margin-right:auto;

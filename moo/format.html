@@ -27,7 +27,6 @@
 				
 			<div class="Banner">		
 				<a href="../index.html"><button class="button"><img width="32px" height="32px" src="../assets/home.png" alt="home"></button></a>
-				<a href="./index.html"><button class="button">moo</button></a>
 			</div>
 				
 				
@@ -38,13 +37,6 @@
 				<!-- Navigation section on the left of the screen... mostly just links. -->
 				<div class="Column-Item Nav-Tree">
 					<ul id="Nav-UL">
-						<li>
-							<span class="Nav-Caret">moo</span>
-							<ul class="Nested">
-								<li><a href="./index.html">moo</a></li>
-								<li><a href="./format.html">moo::format</a></li>
-							</ul>
-						</li>
 
 						<li>
 							<span class="Nav-Caret">Tools</span>
@@ -60,7 +52,6 @@
 							<ul class="Nested">
 								<li><a href="https://sketburd.itch.io/orbit-simulator">Orbit Simulator</a></li>
 								<li><a href="https://store.steampowered.com/app/1543760/Steep_Slopes/">Steep Slopes</a></li>
-								<li><a href="https://sketburd.itch.io/spooky-corporate">Spooky Corporate</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -90,25 +81,22 @@
 						moo::format <a href="https://github.com/ToniaSanzo/moo/blob/main/format.h"><img width="64px" height="64px" src="../assets/github-mark.png" alt="github-icon"></a>
 					</div>
 
+
+
+
 					<div class="Description">
 
 						moo::format is a light "std::format / fmt" substitute.
 
-						<br><br>
-
-
-
 					</div>
+
+
 
 
 					<div class="Page-Content">
 						<h3>Description: </h3>
 						<p margin-bottom="50px">
-							moo::format is a light substitute to "std::format/fmt". It inserts arguments into a string model, example code can be found below.
-
-							<br><br>
-
-							<strong>Side Quest:</strong> If you are looking to make a little bit of coin the <a href="https://github.com/ToniaSanzo/moo/blob/dce2a2bb488ac61434b28947e22c8e498f829e80/format.h#L77">moo::formatParse</a> function could use an upgrade.
+							moo::format is a light substitute to "std::format/fmt". It inserts arguments into a string model, example code can be found below.							
 						</p>
 					</div>
 
@@ -117,9 +105,9 @@
 
 					<div class="Page-Content">
 						<h4>Parameters: </h4>
-						<div style="text-align:center;">
+						<p>
 							moo::format(const char* <strong>formatString</strong>, Args... <strong>args</strong>);
-						</div>
+						</p>
 
 						​<table>
 							<tr>
@@ -317,25 +305,8 @@
 }
 
 <mark class="Code-Comment">// Output: chocolate bars are $1.25</mark>
+
 						</div>
-					</div>
-
-
-
-
-					<div class="Page-Content">
-						<h4>Setup Guide: </h4>
-						<ol style="margin-bottom:64px;">
-							<li>Download or copy the <a href="https://github.com/ToniaSanzo/moo/blob/main/format.h">format.h</a> file.</li>
-							<li>Add the header file to your project.</li>
-							<li>Add your include directive... <mark style="background-color:#98e9d0;border-radius: 4px; font-weight:700;">#include "{filepath}/format.h"</mark>.</li>
-							<li>(Optional) Run the unit tests, found at the bottom of the format.h file.</li>
-							<li>Profit? <br> </li>
-						</ol>
-
-						<video class="Video" controls="controls" autoplay loop muted>
-							<source src="../assets/format-example.webm" type="video/webm" />
-						</video>
 					</div>
 
 				</div>
